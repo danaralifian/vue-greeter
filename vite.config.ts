@@ -10,8 +10,6 @@ export default defineConfig({
     setupFiles: ["./vitest.setup.ts"],
   },
   define: {
-    "process.env": {
-      NODE_ENV: JSON.stringify(process.env.NODE_ENV), // Add any other environment variables you need
-    },
+    "process.env": {},
   },
 });
