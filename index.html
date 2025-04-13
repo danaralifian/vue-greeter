@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Standalone Greeter Demo</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Vue Standalone Greeter Demo</h1>
+      <div id="greeter"></div>
+    </div>
+    <script type="module">
+      import Greeter from '/src/lib/main.ts'
+      
+      // Initialize the greeter
+      Greeter.init('#greeter', { message: 'Hello from the demo page!' })
+    </script>
+  </body>
+</html>
