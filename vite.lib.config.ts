@@ -6,15 +6,17 @@ export default defineConfig({
   test: {
     environment: "jsdom",
   },
+  define: {
+    "process.env": {},
+  },
   build: {
     lib: {
       entry: "src/lib/main.ts",
       name: "Greeter",
       fileName: (format) => `greeter.${format}.js`, // Change this line
-      formats: ["umd"],
+      formats: ["umd", "es"],
     },
     rollupOptions: {
-      external: ["vue"],
       output: {
         globals: {
           vue: "Vue",
