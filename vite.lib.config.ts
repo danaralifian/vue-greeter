@@ -7,6 +7,7 @@ export default defineConfig({
     environment: "jsdom",
   },
   build: {
+    sourcemap: true, // Enable source map generation
     lib: {
       entry: "src/lib/main.ts",
       name: "Greeter",
