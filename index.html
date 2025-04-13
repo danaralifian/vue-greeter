@@ -11,11 +11,13 @@
       <h1>Vue Standalone Greeter Demo</h1>
       <div id="greeter"></div>
     </div>
-    <script type="module">
-      import Greeter from '/src/lib/main.ts'
-      
+    <!-- Load Vue from a reliable source -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- Load the Greeter component from the provided Netlify link -->
+    <script src="https://vue-greeter.netlify.app/greeter.umd.cjs"></script>
+    <script>
       // Initialize the greeter
-      Greeter.init('#greeter', { message: 'Hello from the demo page!' })
+      Greeter.init("#greeter", { message: "Hello from the demo page!" });
     </script>
   </body>
 </html>

@@ -22,7 +22,7 @@ Include the following scripts in your HTML:
 <!-- Vue.js is required -->
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 <!-- Our component -->
-<script src="https://[netlify-site].netlify.app/greeter-component.umd.js"></script>
+<script src="https://vue-greeter.netlify.app/greeter.umd.js"></script>
 ```
 
 ## Usage
