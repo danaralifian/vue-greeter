@@ -19,6 +19,9 @@ This component uses Vue.js's Virtual DOM for several reasons:
 Include the following scripts in your HTML:
 
 ```html
+<!-- style is required -->
+<link rel="stylesheet" href="https://vue-greeter.netlify.app/style.css" />
+
 <!-- Vue.js is required -->
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 <!-- Our component -->

@@ -1,24 +1,27 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { ref, watch } from "vue";
 
 const props = defineProps<{
-  message: string
-  isOpen: boolean
-}>()
+  message: string;
+  isOpen: boolean;
+}>();
 
 const emit = defineEmits<{
-  close: []
-}>()
+  close: [];
+}>();
 
-const modalRef = ref<HTMLDialogElement | null>(null)
+const modalRef = ref<HTMLDialogElement | null>(null);
 
-watch(() => props.isOpen, (isOpen) => {
-  if (isOpen && modalRef.value) {
-    modalRef.value.showModal()
-  } else if (modalRef.value) {
-    modalRef.value.close()
+watch(
+  () => props.isOpen,
+  (isOpen) => {
+    if (isOpen && modalRef.value) {
+      modalRef.value.showModal();
+    } else if (modalRef.value) {
+      modalRef.value.close();
+    }
   }
-})
+);
 </script>
 
 <template>

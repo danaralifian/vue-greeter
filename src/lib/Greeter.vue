@@ -1,38 +1,39 @@
 <script setup lang="ts">
-import { useGreeterStore } from './stores/greeter'
-import { onMounted, watch, computed } from 'vue'
-import Modal from './components/Modal.vue'
+import { useGreeterStore } from "./stores/greeter";
+import { onMounted, watch, computed } from "vue";
+import Modal from "./components/Modal.vue";
 
 const props = defineProps<{
-  message: string
-}>()
+  message: string;
+}>();
 
-const store = useGreeterStore()
+const store = useGreeterStore();
 
-const modalMessage = computed(() => 
-  `${store.message} (clicked ${store.clickCount} times)`
-)
+const modalMessage = computed(
+  () => `${store.message} (clicked ${store.clickCount} times)`
+);
 
 onMounted(() => {
-  store.setMessage(props.message)
-})
+  store.setMessage(props.message);
+});
 
-watch(() => props.message, (newMessage) => {
-  store.setMessage(newMessage)
-})
+watch(
+  () => props.message,
+  (newMessage) => {
+    store.setMessage(newMessage);
+  }
+);
 </script>
 
 <template>
   <div class="vue-greeter">
-    <button @click="store.showMessage" class="greeter-button">
-      Click me!
-    </button>
+    <button @click="store.showMessage" class="greeter-button">Click me!</button>
     <div v-if="store.clickCount > 0" class="click-count">
       Button clicked: {{ store.clickCount }} times
     </div>
-    <Modal 
+    <Modal
       :message="modalMessage"
-      :is-open="store.isModalOpen"
+      :isOpen="store.isModalOpen"
       @close="store.closeModal"
     />
   </div>
